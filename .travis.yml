@@ -15,7 +15,5 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - docker-compose --version
-  - make setup
-  - make build
-  - make up
+  - docker-compose build
   
