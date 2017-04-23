@@ -16,4 +16,5 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker-compose --version
   - ls
+  - make asdf
   - echo "test"
