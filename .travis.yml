@@ -7,7 +7,7 @@ cache:
   timeout: 1000
   bundler: true
   directories:
-    - /var/lib/docker
+    - ~/docker
     
 sudo: required
 
@@ -15,6 +15,7 @@ services:
   - docker
  
 before_install:
+  - sudo mv docker /var/lib/
 #  - sudo apt-get update
 #  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
 #  - docker-compose --version
@@ -29,6 +30,7 @@ before_install:
 
 script:
   - docker pull docker.elastic.co/elasticsearch/elasticsearch:5.3.1
-  - sudo chmod 777 /var/lib/docker -R
+  - sudo mv /var/lib/docker ~/
+  - sudo chmod 777 ~/docker -R
 #  - mkdir -p $HOME/docker && docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}} {{.ID}}' | xargs -n 2 -t sh -c 'test -e $HOME/docker/$1.tar.gz || docker save $0 | gzip -2 > $HOME/docker/$1.tar.gz'
   
