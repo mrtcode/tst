@@ -23,6 +23,7 @@ before_install:
 #  - docker-compose --version
   - docker --version
   - docker-compose --version
+  - ls -la /home/travis/docker
   - if [ -f ${DOCKER_CACHE_FILE} ]; then gunzip -c ${DOCKER_CACHE_FILE} | docker load; fi
 
 script:
