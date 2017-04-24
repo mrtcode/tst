@@ -23,7 +23,6 @@ before_install:
 #  - docker-compose --version
   - docker --version
   - docker-compose --version
-  - ls -la /home/travis/docker
 
 script:
   - docker pull docker.elastic.co/elasticsearch/elasticsearch:5.3.1
