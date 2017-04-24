@@ -1,6 +1,6 @@
 env:
- DOCKER_COMPOSE_VERSION: 1.12.0
- DOCKER_CACHE_FILE: /home/travis/docker/cache.tar.gz
+ - DOCKER_COMPOSE_VERSION=1.12.0
+ - DOCKER_CACHE_FILE=/home/travis/docker/cache.tar.gz
   
 cache:
   directories:
