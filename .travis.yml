@@ -6,13 +6,7 @@ before_script:
   - echo $TRAVIS_REPO_SLUG
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_PULL_REQUEST
-  - dpl --provider=s3 --access-key-id=asdf --secret-access-key=asdf --bucket=asdf --acl=public_read
   - dpl \
-        --provider=s3 \
-        --bucket=zotero-download \
-        --access-key-id=AKIAJFDVJ54MCAEXPQ5Q \
-        --local-dir=build-zip \
-        --upload-dir=ci/client \
-        --acl=public-read
+        --provider=s3
 script:
   - echo $VAR1
