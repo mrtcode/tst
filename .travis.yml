@@ -7,7 +7,10 @@ env:
 before_install:
   - gem install dpl
 before_script:
-  - if [ $FX_VERSION = "54.0b" ] && [ $TRAVIS_REPO_SLUG = "mrtcode/tst" ] && [ $TRAVIS_BRANCH = "new1" ] && [ $TRAVIS_PULL_REQUEST = "false" ]; then
+  - if [ $FX_VERSION = "54.0b" ] && 
+       [ $TRAVIS_REPO_SLUG = "mrtcode/tst" ] && 
+       [ $TRAVIS_BRANCH = "new1" ] && 
+       [ $TRAVIS_PULL_REQUEST = "false" ]; then
       mkdir build-zip;
       cd build-zip;
       touch asdf;
