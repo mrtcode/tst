@@ -3,8 +3,11 @@ env:
 before_install:
   - gem install dpl
 before_script:
+  - if [ $FX_VERSION = "45.0.2esr" ]; then
+      wget -O tarball "https://archive.mozilla.org/pub/firefox/releases/45.0.2esr/linux-x86_64/en-US/firefox-45.0.2esr.tar.bz2";
+    fi
   - if [ $TRAVIS_REPO_SLUG = "mrtcode/tst" && $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]; then
-      dpl --provider=s3 --bucket=zotero-download --access-key-id=AKIAJFDVJ54MCAEXPQ5Q --local-dir=build-zip --upload-dir=ci/client --acl=public-read
+      dpl --provider=s3 --bucket=zotero-download --access-key-id=AKIAJFDVJ54MCAEXPQ5Q --local-dir=build-zip --upload-dir=ci/client --acl=public-read;
     fi
 script:
   - echo $VAR1
