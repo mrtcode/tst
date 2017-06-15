@@ -8,7 +8,7 @@ before_script:
   - echo $TRAVIS_PULL_REQUEST
   - echo asdf\
          zxcv
-  - dpl\
+  - dpl \
     --provider=s3
 script:
   - echo $VAR1
