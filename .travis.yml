@@ -4,4 +4,7 @@ before_install:
   - echo $VAR1
   - unset VAR1
   - echo $VAR1
-  
+before_script:
+  - echo $VAR1
+script:
+  - echo $VAR1
