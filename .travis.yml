@@ -8,6 +8,7 @@ before_install:
   - gem install dpl
 before_script:
   - if [ $FX_VERSION = "54.0b" ] && [ $TRAVIS_REPO_SLUG = "mrtcode/tst" ] && [ $TRAVIS_BRANCH = "new1" ] && [ $TRAVIS_PULL_REQUEST = "false" ]; then
+      mkdir build-zip && cd build && zip -r ../build-zip/$TRAVIS_COMMIT.zip *&& cd ..;
       dpl --provider=s3 --bucket=zoterotest1 --access-key-id=AKIAIOWX5B6F6OJJCPQA --local-dir=./ --upload-dir=_ci/client --acl=public-read;
     fi
   - unset AWS_SECRET_ACCESS_KEY
