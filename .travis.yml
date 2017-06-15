@@ -1,5 +1,6 @@
 env:
-  - VAR1=asdfasdf
+  global
+    - VAR1=asdfasdf
 before_install:
   - echo $VAR1
   - unset VAR1
