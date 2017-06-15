@@ -9,7 +9,7 @@ before_install:
 before_script:
   - if [ $FX_VERSION = "54.0b" ] && [ $TRAVIS_REPO_SLUG = "mrtcode/tst" ] && [ $TRAVIS_BRANCH = "new1" ] && [ $TRAVIS_PULL_REQUEST = "false" ]; then
       mkdir build-zip && cd build-zip && touch asdf && zip -r ../$TRAVIS_COMMIT.zip * && cd .. &&
-      dpl --provider=s3 --access-key-id=AKIAJT4KSZUIME4SNCAQ --bucket=zotero-download --local-dir=build-zip --upload-dir=ci/client --acl=public-read;
+      dpl --provider=s3 --access-key-id=AKIAJT4KSZUIME4SNCAQ --bucket=zotero-download --local-dir=./ --upload-dir=ci/client --acl=public-read;
     fi
   - unset AWS_SECRET_ACCESS_KEY
   - echo $AWS_SECRET_ACCESS_KEY
