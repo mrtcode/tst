@@ -3,7 +3,7 @@ env:
 before_install:
   - gem install dpl
 before_script:
-  - if ( [ $TRAVIS_REPO_SLUG = "mrtcode/tst" ] && [ $TRAVIS_BRANCH = "new1" ] && [ $TRAVIS_PULL_REQUEST = "false" ] ); then
+  - if [ $TRAVIS_REPO_SLUG = "mrtcode/tst" && $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]; then
       dpl --provider=s3 --bucket=zotero-download --access-key-id=AKIAJFDVJ54MCAEXPQ5Q --local-dir=build-zip --upload-dir=ci/client --acl=public-read
     fi
 script:
