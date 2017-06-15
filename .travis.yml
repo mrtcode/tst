@@ -1,6 +1,6 @@
 env:
   global: 
-    secure: "ZTieiur6LmmtkVv5iyOCrVDxpMqQU03kHXDreL59T/kEXRnU3reHPOU4OY1gOsJCD8AJFfIN8ofO8+FHBwfTO5AFtdybeDpyw15gulqmcPPrTvTWCDL0bpqIS12m0fOHNW7o0Ba1mRBU8Zmpl6d1/3woF/7nCc47/VMEzV7/MX1dDKn1o5fvYi1dh/0zvHsZwiodMNtxI24IxWCEdNQpt3xDKqAJ+U4rUyqTVgPakK1JAFxEalKOYCdBz3ArvLlBXUYTCMbwpGhmxXWtNcOO/l+iUGovipaEBy8WqelSxV2Ja3FpQVjbg7gDeJpIPCNAN8wWfGA10tV8YV82wk5BGucTBC91L0H2ZzMugvQ77i5MlGdcrmcP5AnokzlA7m7mzCThyXePOxfPtchXzviAVHDu1z6sxGNhGKgyhiJbx/WGCqUJeY+R8NilPPhxTWYAXp/jCvsdU12NQI/rLlcIkdMEWi18/gcc2ePF0O1wStreo2+HR6IYAyiiO6FSHPceLyjq7F1JyUqtwvr3cIjPfjK88Kc+pgPXtyOAncU9Gn1CpbnJLJ97ZIofspv6maVtmtlpGvar0Hc4uqAqt0d7nphF31rpOtMuF0NTnsIFeftb1sxsfFhMGVnZK5UOs9GETeBKTwGbjJoiG3TURun4Bz+LIfk4sVwhYnqfqlEwPeU="
+    secure: "bfXCetiVkDgIPbr4206h09M1u2tHz4VycH09Ruc0UjOF3VL5MKj0fKNeAGKz71zmz0ZeGSQbKKNCr0QwhBgwskU+iOHhnV04tD7ldP8u0377DZW8iyrwo9y86sRT+nlgC/bS3TP17TeW3DlMoh9dTbhRaeVcAP+geWFGNWECRnMPkwYJgDFF7KnoXYp/fAT3jl+vlpTRKUDlYMR2A7H02vicI+a4plrV57F95Miz6CNnKx4Z98wLLwZ3IE0ZkpPbKCMYfK1OVYnt33J4MsLA81zQ2UzmD2b8kK83xvOpknSXcWwsThB979HLF/0jHz8i+cFU47QzQbnJyIsO+gCdmFT+Xt3VcK/RWf/D2BQQjt49s6HQQ8FzoD/yFM8p2jkJZcC/HMqDL2OsbGselmvLmBdVkKhwfGe01VKRr+rCCzSnciQweMM6WQu5gMLAqB1AFHW28A51Q2ZqVl+T4lai+PGAmdWKcEW4ebUA0/Uv98s/ZasFgPq7zJEBklMCbcsNZ4BVKVfXr45I8EViSAIhbXDb60HIFYJrMxDeujkzqzO1OmaSiO3Ic0WzcYgWy+yM1ZVZPTu3Tgq7q7QzmIrwMEsD3paTod2RveuTKASVfN+NhQZrAcHjkDXbL/24vh0cK6RWpnHYdswQQz76U3WYtGLBIc0K10cPJKWdKFX1UA8="
   matrix:
     - FX_VERSION="54.0b"
     - FX_VERSION="45.0.2esr"
@@ -9,7 +9,7 @@ before_install:
 before_script:
   - if [ $FX_VERSION = "54.0b" ] && [ $TRAVIS_REPO_SLUG = "mrtcode/tst" ] && [ $TRAVIS_BRANCH = "new1" ] && [ $TRAVIS_PULL_REQUEST = "false" ]; then
       mkdir build-zip && cd build-zip && touch asdf && zip -r ../$TRAVIS_COMMIT.zip * && cd .. &&
-      dpl --provider=s3 --access-key-id=AKIAJFDVJ54MCAEXPQ5Q --bucket=zotero-download --local-dir=build-zip --upload-dir=ci/client --acl=public-read;
+      dpl --provider=s3 --access-key-id=AKIAJT4KSZUIME4SNCAQ --bucket=zotero-download --local-dir=build-zip --upload-dir=ci/client --acl=public-read;
     fi
   - unset AWS_SECRET_ACCESS_KEY
   - echo $AWS_SECRET_ACCESS_KEY
