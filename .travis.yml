@@ -5,7 +5,7 @@ env:
   - secure: HeAzpR/J4ZiDB4qCR1GueaHyqy0l5PK2rcYj9aQ0KRF1rkQZ/1072Im6nxV+l/EE2p3AOpvcqVLTJUODnPwOl65Pjt8WsqBw/F3Lmt2qsh+5R1u2bLVrDTOCwyKSikD/KxDJgliSIwxEmVfxk8OxOZqQXKhy42IpM0SuNfZSYH6PxJxoELQZaFCpLSQ+xI/SKueJFnzOss/Cz4DbQ8rJon2veUjGTVPu3E0j+0QDaCUzTASoIKqi346FGthUH7WC/DQvqvFc9Olv7PVNMd8mc/pI4suw+Dx61rh+a2aRuIFIyOQDjopgUW5aokuA5tr1cJtA23s3wYfylo7HTx5UOkQ4IAWg/lIz+nDJLnHrPI2AeOortk4fRfpGHBCK1+yq7i2AQatTB0csoIbybyNfcUfV/a9MoxnGI1iqqSBpj2+VTNEWt65967FMGhMb/KQerHTp7sKsdoxI34dMrvvaTgrv0n2+KUC8kUsZ5hEA/NCQeWrNgfbnKTzLU0QmPO+BwtCgLe332Oyc+t9MCcAi9fSovVppd3klmLmZ9SfICUlNY175+baP+c/6YiKT+BXmDGFzU1yb4BGwxVmOkANhjl+2Ri74UkzJsY6FIXFP5IEf8ocI1mlemuyXcCqL0SeX+y2bv68NGMBUt93c5U7UBFuXtub75fRmcKpfcODdUPk=
 sudo: required
 dist: trusty
-language: node_js
+language: shell
 node_js:
 - '8'
 cache:
@@ -15,6 +15,8 @@ cache:
 before_install:
 - cd data
 - ls -la
+- curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+- sudo apt-get install -y nodejs
 - pip install --user awscli
 - df -h
 - aws s3 sync $S3_PATH ./ --exclude "*" --include "db.tar.gz"
@@ -23,3 +25,7 @@ before_install:
 - df -h
 - cd ..
 - ls -la
+- df -h
+- du -hs ~/.cache/
+- du -hs ~/.casher/
+
