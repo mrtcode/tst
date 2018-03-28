@@ -29,4 +29,5 @@ before_install:
 - df -h
 - du -hs ~/.cache/
 - du -h ~/.casher/
+- ls -lta ~/.casher/
 
