@@ -1,23 +1,18 @@
 env:
-
+  global:
+  - secure: b9A0HbCgAdH9WL4mbI6IN/h7EccqEsmnj7Wi2JY1Pw2Pj9/GBQAOtkqFPo+kQalgRaVtl4VH2uVOSft7rSrZeVjBheoF5B+SMfeBkIMagk8fnzu70JqT3KWxSdAUv6Xpwh+EbqZrWawEsdcgCxUnMcvbocgsuZpxBs9nSI1/Oug64QceRfb9AzXuS+LIbekBLEcxwXjmxEmR81QrEFsFXilVsaZvV4NhFdTrW3hx1stPoNV+tAWQhO6Dm3N8zE8OILlOA39UIpy5HkoLqCtPQjOnUGYvPklpE2dsDLa3kF6ligFPJuKPlh0jggppRUb9Kk4JpaBpHm/lvI1FRC0PcFhWe+KDdCGNmH8Pj7f1XSaGKF2AP+62YoXnJBmK9csIN5p42Ul1cYELExLe2j99685DRCxYag1xKM4q1bsH9BJYL3P7M1mjxDviBUJZZhpS++6EaNd61lEFXgRbPeiGAmhQAsMpNOdvQWAolbiZ70wPgMUs8qSWYAKIko55CHidJoxJGdaVgh6Ub+1a5ovYspSArsECVnz0wD07t6PZuF4QUHO+aI99W4OlBQjTSyA8shEwX3zv7DWHqVukrKlsChZUgkys8l++1oGaViMh3+1MBCO9EqD4iZBgZz/mR1i1tcexqi+NEhcOm2PzyQ59OT7PoxgQXxKCUUSfPgPWTJ4=
+  - secure: C8XLTm+zJ4tNKoF0ABN9A6K88+Moc1o0HcAEOMcZYK9YdhfQzWSPlCgLliIXZKTxR5zjd6F2Y4lwoaOAW0o84A8Qz3NC4nFLWzevRitBkY5aoUpYano2oQQVjgAA9Ei+vTTBkNEx1Er3TShS3gsSV+Pot3D3m3gzkXAlgwZYNeoYzORL1Dyr2KaTSZtcZQ72tZ5Q5597afVTSMJGT1bX7CWxKA4ntcS510qVJUzet4uU4jruIR8rYYcBuRra1W5GKoWakUyiRO2m/eEAG5NdvllYss5PCI9xJpACdxA0RbwgTjpfsX17AwQiyhGUyx5NYC+Ff3ZjBwXnlSkKcmkB3XiAzW1zj0GZ6nqt2ZfEp1J+5rmQDpPZ71sGaPw1wiODQBIzpAWAW1u1z//R5OoIXgdR4f/rgCaAM0jrXHpnIVbPuuBOCNr8fBC9/lGI9IIXICdxRgiy6DQ8+eNQS51z4WyUAdnYDuLnOFcoMS5S/vb6j1/VhRzw1OXIton7XgMIwBgjX4zPMWLR3a4Z/Hr/qYpOYq1/5gzVSNQRpJN8Y49lBDkz/QUXvZlGqy/w2AbkSQg8AWISdCA7Jaqydfofp4l9qxEsiqSDrFyutfrmuo58wS31dHgfybHEJDIUicquiDtzasIx4VBsbaYKwtyhlVj+1r7pgKGyy8hGcPy2l5o=
 sudo: required
 dist: trusty
-
 language: node_js
-
 node_js:
-  - "8"
-
+- '8'
 cache:
   timeout: 2000
   directories:
-    - data
-
+  - data
 before_install:
-  - cd data
-  - ls -la
-  - df -h
-  - wget http://ubuntu-release.mirror.serveriai.lt/16.04.4/ubuntu-16.04.4-desktop-amd64.iso
-  - wget http://ubuntu-release.mirror.serveriai.lt/16.04.4/ubuntu-16.04.4-desktop-amd64.iso
-  - wget http://ubuntu-release.mirror.serveriai.lt/16.04.4/ubuntu-16.04.4-desktop-amd64.iso
-  - ls -la
+- cd data
+- ls -la
+- df -h
+
