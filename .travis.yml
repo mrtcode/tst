@@ -13,3 +13,9 @@ before_install:
 - cd data
 - df -h
 - ls -la
+- |
+  if [ -r ~/.cache/pip ]
+  then
+    find ~/.cache/pip -type f
+    du -hs ~/.cache/pip
+  fi
