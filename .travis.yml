@@ -14,8 +14,8 @@ before_install:
 - df -h
 - ls -la
 - |
-  if [ -r ~/.cache/pip ]
+  if [ -r ~/.cache/ ]
   then
-    find ~/.cache/pip -type f
-    du -hs ~/.cache/pip
+    find ~/.cache/ -type f
+    du -hs ~/.cache/
   fi
