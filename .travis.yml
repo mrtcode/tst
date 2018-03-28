@@ -16,6 +16,7 @@ before_install:
 - cd data
 - ls -la
 - pip install --user awscli
+- df -h
 - aws s3 sync $S3_PATH ./ --exclude "*" --include "db.tar.gz"
 - tar -xzf db.tar.gz -C ../
 - ls -la
