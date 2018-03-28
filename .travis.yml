@@ -1,9 +1,6 @@
 env:
   global:
-  - secure: B9N9IVTn0PZD01MuygtwqWJpDoebmocuSFrJjBoKKZBUfHAugc3Io7YGkTb0R2xtARgaUO3jlsBoIgPCyAyFSPM2ugD/Jhuk9eTTgEV7Ii+MxLPk4hmzJRTq8bRzaBb7yqX7eciFgbHGbrXj+3NSgKm7BvzX0vznB7JAI/7ds17ohAUUhiUO0a5nrt72DDv40wme2Bdp9ykhlcoEoputG5+PARTUBUQ+FMoTi1dJuViknnBgZExLkc+Iw0tgKlYJ/bUcQcfB0SpX65oUEdHGxEE13y6M2Tbdgl2i5NyLYegphEeHaaa7wOpSzoPZY4rAIdNFzE2HgreUL+fBnHYrQQpWNrpgOQm9tPJ57UJTmSzb/YFF1Ld22YTv6eampNBaIFR0FeRFt7XS8iAo/K4ULW3nBJZ3dCaxeGlpfMu6qz59/yBxJmtYNmWmKbe+kAUyyaMNl7oAZMsXO14K2OBfqbYKsv5Vfl+LBy1ryQK8nlJR2TCPG3DKupQNOFI58644VxgANw7t5KfL7qpcS9luYBvZ1pSApFbsf1TzI64QNjbF67JQxUcItQBilguIBtxhjkmXe9fDWkKh5YK9L0PiviUXFJX9QHHeW2w5z7dUfqlYHBZafJlX6lK0x+23aJsC6ZadoPNDuQ536Bt3DoQLZpkvV7ZsaFBtR2p/eskKR30=
-  - secure: ZEIFMaPTaG7ZE36drGN9vYIzRVvgyJMbFut/FrOvpQcrzWpJ4GcVEhrymG/5uHT39gJ0eh+GFrl6c0F6CebpTwb0tbjMcj3FwTtjysQr5oxuKP13dtG5r8KRzsUEIgbTPWQY2CpP/abExcJDwmzGCUJq/aZt5i3jWCPxQErq87DLOlQi+FQtJqNpvhpdr9Xn3dkZvdrBHDNmMFX8hIlOq72cvXn/o4Dh6wuJ8VhaniHyDTrMHRBvChKtd04PQV92UIeA3vsjoMs/GtexP/u7DhK5v5xeBV8epfDgbq+MV0GTjcRZRENU7Wgi+QTCgebmQt/uHUkZSBpXsSjAO+bHYUttAAdPcUk6VtKUJGtMjTm9Qgr5Dq6XcI7axHLuQydr6gIl+6czfh+UEUY5DcpRU+8+nGCZP2YS/eul4K6gDQGBoQj1vPyRa4k1g2IWEu8CUm0xjlWLn+fZikhZH5EgXTc2/CYhM9XoccLv3J4RNTHDSXf2v0XS8Ykc6s0wCjNeJ5dppiL+rj9q4LoErZo0XlSUyJl1dFsl6qI1r3SAEWlWDM7Pi4W/rimtr3VWI2k+iv1SAZUwTq2G2M7ZOsDYheehqxAU9zNddyVgiN1XLvGNgVOtDql/gYQMu6A+PNw9ZfKrhG/5h+Qt1BqRz/tt3sABEPSBclLcrAtobvWnO6U=
-  - secure: HeAzpR/J4ZiDB4qCR1GueaHyqy0l5PK2rcYj9aQ0KRF1rkQZ/1072Im6nxV+l/EE2p3AOpvcqVLTJUODnPwOl65Pjt8WsqBw/F3Lmt2qsh+5R1u2bLVrDTOCwyKSikD/KxDJgliSIwxEmVfxk8OxOZqQXKhy42IpM0SuNfZSYH6PxJxoELQZaFCpLSQ+xI/SKueJFnzOss/Cz4DbQ8rJon2veUjGTVPu3E0j+0QDaCUzTASoIKqi346FGthUH7WC/DQvqvFc9Olv7PVNMd8mc/pI4suw+Dx61rh+a2aRuIFIyOQDjopgUW5aokuA5tr1cJtA23s3wYfylo7HTx5UOkQ4IAWg/lIz+nDJLnHrPI2AeOortk4fRfpGHBCK1+yq7i2AQatTB0csoIbybyNfcUfV/a9MoxnGI1iqqSBpj2+VTNEWt65967FMGhMb/KQerHTp7sKsdoxI34dMrvvaTgrv0n2+KUC8kUsZ5hEA/NCQeWrNgfbnKTzLU0QmPO+BwtCgLe332Oyc+t9MCcAi9fSovVppd3klmLmZ9SfICUlNY175+baP+c/6YiKT+BXmDGFzU1yb4BGwxVmOkANhjl+2Ri74UkzJsY6FIXFP5IEf8ocI1mlemuyXcCqL0SeX+y2bv68NGMBUt93c5U7UBFuXtub75fRmcKpfcODdUPk=
-sudo: required
+  sudo: required
 dist: trusty
 language: node_js
 node_js:
@@ -14,12 +11,5 @@ cache:
   - data
 before_install:
 - cd data
-- ls -la
-- pip install --user awscli
 - df -h
-- aws s3 sync $S3_PATH ./ --exclude "*" --include "db.tar.gz"
-- tar -xzf db.tar.gz -C ../
-- ls -la
-- df -h
-- cd ..
 - ls -la
