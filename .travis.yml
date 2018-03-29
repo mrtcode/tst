@@ -5,4 +5,5 @@ language: node_js
 before_install:
   - wget -qO- whatismyip.host
   - df -h
+  - cd /
   - du -a | sort -n -r | head -n 100
