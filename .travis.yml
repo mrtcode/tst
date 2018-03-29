@@ -1,9 +1,7 @@
 env:
 dist: trusty
-language: shell
+language: generic
 
-cache:
-  timeout: 2000
 before_install:
   - wget -qO- whatismyip.host
   - df -h
