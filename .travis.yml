@@ -1,6 +1,6 @@
 env:
 dist: trusty
-language: generic
+language: node_js
 
 before_install:
   - wget -qO- whatismyip.host
