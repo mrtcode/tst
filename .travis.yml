@@ -1,5 +1,4 @@
 env:
-sudo: required
 dist: trusty
 language: shell
 
